@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.khamamm3ayachwiya.Database.Controller.QuestionController;
 import com.example.khamamm3ayachwiya.Database.Controller.ScoreController;
@@ -67,11 +66,13 @@ public class GameController {
                if (check.equalsIgnoreCase(question)){
                    questionController.setStatus((long) currentScore.getLevel());
                    if (scoreController.winLevel(currentScore.getLevel(),currentQuestion.getStatus())){
+                       viewGenerator.setImageDisplay(true);
+                       resetAll();
+                   }
+                   else {
                        Intent intent = new Intent(context, WinActivity.class);
                        context.startActivity(intent);
                    }
-                   viewGenerator.setImageDisplay(true);
-                   resetAll();
                }
                else {
                    viewGenerator.setImageDisplay(false);

@@ -1,6 +1,5 @@
 package com.example.khamamm3ayachwiya.Database.Controller;
 
-import android.util.Log;
 
 import com.example.khamamm3ayachwiya.Database.Doa.ScoreRepository;
 import com.example.khamamm3ayachwiya.Database.Entities.Score;
@@ -21,6 +20,7 @@ public class ScoreController {
             return true;
         }
         else {
+            scoreRepository.nextLevel();
             return false;
         }
     }
@@ -47,6 +47,12 @@ public class ScoreController {
             return true;
         }
         else {
+            if (checks(status)) {
+                scoreRepository.updateScore();
+            }
+            else {
+                scoreRepository.nextLevel();
+            }
             return false;
         }
     }

@@ -4,36 +4,21 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.app.ActionBar;
-import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.example.khamamm3ayachwiya.Database.Controller.QuestionController;
 import com.example.khamamm3ayachwiya.Database.Controller.ScoreController;
-import com.example.khamamm3ayachwiya.Database.Entities.Questionnes;
-import com.example.khamamm3ayachwiya.Database.Entities.Score;
 import com.example.khamamm3ayachwiya.Database.InsertData.ManipulateData;
 import com.example.khamamm3ayachwiya.Database.MyGameDatabase;
 import com.example.khamamm3ayachwiya.Dialogs.DialogController;
 import com.example.khamamm3ayachwiya.Fragments.GameFragment;
-import com.example.khamamm3ayachwiya.MyGame.GameController;
 import com.google.android.material.navigation.NavigationView;
-
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private NavigationView navigationView;
@@ -59,9 +44,15 @@ public class MainActivity extends AppCompatActivity {
         this.myGameDatabase = MyGameDatabase.getMyDatabase(getApplicationContext());
         ManipulateData manipulateData = new ManipulateData(myGameDatabase);
         manipulateData.onCreate();
+        ScoreController scoreController = new ScoreController(myGameDatabase);
+        if (scoreController.getScore().getLevel() > 8){
+            Intent intent = new Intent(MainActivity.this, WinActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
     private void initiateFragment(){
-        gameFragment = new GameFragment(context,myGameDatabase);
+        gameFragment = new GameFragment(MainActivity.this,myGameDatabase);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.gameFragmentHolder,gameFragment);

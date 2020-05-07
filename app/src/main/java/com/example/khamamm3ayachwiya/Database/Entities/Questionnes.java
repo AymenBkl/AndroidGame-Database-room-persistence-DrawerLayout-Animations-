@@ -1,6 +1,5 @@
 package com.example.khamamm3ayachwiya.Database.Entities;
 
-import androidx.annotation.IntDef;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

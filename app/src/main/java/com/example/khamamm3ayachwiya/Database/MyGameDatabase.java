@@ -10,7 +10,6 @@ import com.example.khamamm3ayachwiya.Database.Doa.QuestionRepository;
 import com.example.khamamm3ayachwiya.Database.Doa.ScoreRepository;
 import com.example.khamamm3ayachwiya.Database.Entities.Questionnes;
 import com.example.khamamm3ayachwiya.Database.Entities.Score;
-import com.example.khamamm3ayachwiya.Database.InsertData.ManipulateData;
 
 @Database(entities = {Questionnes.class, Score.class} , version = 1 ,exportSchema = false)
 public abstract class MyGameDatabase extends RoomDatabase {

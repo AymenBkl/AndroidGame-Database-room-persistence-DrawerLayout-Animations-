@@ -3,10 +3,8 @@ package com.example.khamamm3ayachwiya.Generators;
 import android.content.Context;
 import android.os.Handler;
 import android.text.InputFilter;
-import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,8 +13,6 @@ import android.widget.TextView;
 import com.example.khamamm3ayachwiya.Animations.AnimationController;
 import com.example.khamamm3ayachwiya.R;
 
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class ViewGenerator {
     private Context context;
@@ -58,7 +54,7 @@ public class ViewGenerator {
 
     public void setImageDisplay(final boolean display){
         if (display){
-            this.imageView.setImageResource(R.drawable.next);
+            this.imageView.setImageResource(R.drawable.correct);
         }
         else {
             this.imageView.setImageResource(R.drawable.wrong);

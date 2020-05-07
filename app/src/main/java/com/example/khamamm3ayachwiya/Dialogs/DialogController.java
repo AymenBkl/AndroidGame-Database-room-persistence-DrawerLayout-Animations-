@@ -4,8 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.util.Log;
-
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -78,7 +76,8 @@ public class DialogController {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        gameFragment.getMyGameDatabase().scoreRepository().resetScore();
+                        scoreController.resetGame();
+                        questionController.resetQuestionne();
                         gameFragment.getGameController().resetAll();
                         dialog.dismiss();
                     }

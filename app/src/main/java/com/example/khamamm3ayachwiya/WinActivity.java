@@ -34,9 +34,7 @@ public class WinActivity extends AppCompatActivity {
         TextView txt2 = (TextView) findViewById(R.id.score);
         TextView txt3 = (TextView) findViewById(R.id.average);
         Button btn = (Button) findViewById(R.id.tryAgain);
-        Log.i("lol","xdnothing happend");
         int questionNumber = questionController.getQuestionNumber();
-        Log.i("lol","xdnothing"+questionNumber);
 
         Long score = scoreController.getScore().getScore();
         txt3.setText(checks(questionNumber,score));
@@ -65,9 +63,9 @@ public class WinActivity extends AppCompatActivity {
 
     private String checks(int questionNumber,Long score){
         try {
-            if ((questionNumber / score) <= 3) {
+            if (score <= questionNumber/questionNumber) {
                 return "DO BETTER";
-            } else if ((questionNumber / score) < 7 && (questionNumber / score) > 3 ) {
+            } else if (  score <= questionNumber/6 && score > questionNumber/questionNumber ) {
                 return "COOL";
             } else {
                 return "GREATE";

@@ -1,6 +1,5 @@
 package com.example.khamamm3ayachwiya.MyGame;
 
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 

@@ -2,18 +2,15 @@ package com.example.khamamm3ayachwiya.Fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.khamamm3ayachwiya.Database.MyGameDatabase;
-import com.example.khamamm3ayachwiya.MainActivity;
 import com.example.khamamm3ayachwiya.MyGame.GameController;
 import com.example.khamamm3ayachwiya.R;
 
