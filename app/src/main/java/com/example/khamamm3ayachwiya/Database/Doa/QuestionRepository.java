@@ -25,8 +25,14 @@ public interface QuestionRepository {
     @Query("DELETE FROM questionnes")
     void resetQuestionnesTable();
 
-    @Query("UPDATE questionnes SET status = 0 WHERE id = :position")
+    @Query("UPDATE questionnes SET status = 1 WHERE id = :position")
     void setStatus(Long position);
+
+    @Query("UPDATE questionnes SET status = 0")
+    void resetQuestionnes();
+
+    @Query("SELECT COUNT(*) FROM questionnes")
+    int getQuestionNumber();
 
 
 }

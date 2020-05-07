@@ -1,28 +1,36 @@
 package com.example.khamamm3ayachwiya.Generators;
 
 import android.content.Context;
+import android.os.Handler;
 import android.text.InputFilter;
+import android.util.Log;
 import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.khamamm3ayachwiya.Animations.AnimationController;
 import com.example.khamamm3ayachwiya.R;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class ViewGenerator {
     private Context context;
     private AnimationController animationController;
     private LinearLayout linearLayout;
     private TextView textView;
+    private ImageView imageView;
 
     public ViewGenerator(Context context,View view){
         this.context = context;
         this.animationController = new AnimationController(this.context);
         this.linearLayout = (LinearLayout) view.findViewById(R.id.linearLayoutContainer);
         this.textView = (TextView) view.findViewById(R.id.valueScore);
+        this.imageView = (ImageView) view.findViewById(R.id.responseimage);
     }
 
     public EditText createEditText(int id){
@@ -48,4 +56,24 @@ public class ViewGenerator {
         this.linearLayout.removeAllViews();
     }
 
+    public void setImageDisplay(final boolean display){
+        if (display){
+            this.imageView.setImageResource(R.drawable.next);
+        }
+        else {
+            this.imageView.setImageResource(R.drawable.wrong);
+        }
+        if (imageView.getVisibility()== View.GONE) {
+            this.imageView.setVisibility(View.VISIBLE);
+        }
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                changeVisibility();
+            }
+        }, 2000);
+    }
+    private void changeVisibility(){
+        this.imageView.setVisibility(View.GONE);
+    }
 }

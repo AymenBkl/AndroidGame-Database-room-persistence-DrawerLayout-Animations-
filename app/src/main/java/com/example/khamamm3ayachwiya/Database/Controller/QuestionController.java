@@ -33,5 +33,12 @@ public class QuestionController {
         questionRepository.setStatus(level);
     }
 
+    public int getQuestionNumber(){
+        return questionRepository.getQuestionNumber();
+    }
+
+    public void resetQuestionne(){
+        questionRepository.resetQuestionnes();
+    }
 
 }

@@ -1,6 +1,7 @@
 package com.example.khamamm3ayachwiya.MyGame;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -12,7 +13,7 @@ import com.example.khamamm3ayachwiya.Database.Entities.Score;
 import com.example.khamamm3ayachwiya.Database.MyGameDatabase;
 import com.example.khamamm3ayachwiya.Generators.ViewGenerator;
 import com.example.khamamm3ayachwiya.R;
-
+import com.example.khamamm3ayachwiya.WinActivity;
 
 
 public class GameController {
@@ -65,11 +66,15 @@ public class GameController {
                String check = question.charAt(0) +  game.checks() + question.charAt(question.length()-1);
                if (check.equalsIgnoreCase(question)){
                    questionController.setStatus((long) currentScore.getLevel());
-                  scoreController.winLevel(currentScore.getLevel(),currentQuestion.getStatus());
-                  resetAll();
+                   if (scoreController.winLevel(currentScore.getLevel(),currentQuestion.getStatus())){
+                       Intent intent = new Intent(context, WinActivity.class);
+                       context.startActivity(intent);
+                   }
+                   viewGenerator.setImageDisplay(true);
+                   resetAll();
                }
                else {
-                   Toast.makeText(context,"nomatch",Toast.LENGTH_SHORT).show();
+                   viewGenerator.setImageDisplay(false);
                }
             }
         });

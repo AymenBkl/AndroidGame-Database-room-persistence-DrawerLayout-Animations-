@@ -8,7 +8,7 @@ import android.view.animation.AnimationUtils;
 import com.example.khamamm3ayachwiya.R;
 
 public class AnimationController {
-    private Animation topAnim,botAnim,leftoright,rightoleft;
+    private Animation topAnim,botAnim,leftoright,rightoleft,winleft,winright;
     private Context context;
     public AnimationController(Context context){
         this.context = context;
@@ -24,6 +24,12 @@ public class AnimationController {
     }
     private void loadRightToLeftAnimation(){
         this.rightoleft = AnimationUtils.loadAnimation(this.context,R.anim.righ_to_left);
+    }
+    private void loadWinLeft(){
+        this.winleft = AnimationUtils.loadAnimation(this.context,R.anim.winleft);
+    }
+    private void loadWinRight(){
+        this.winright = AnimationUtils.loadAnimation(this.context,R.anim.winright);
     }
 
     public void setAnimationBottom(View view){
@@ -42,4 +48,13 @@ public class AnimationController {
         loadRightToLeftAnimation();
         view.setAnimation(this.rightoleft);
     }
+    public void setWinLeft(View view){
+        loadWinLeft();
+        view.setAnimation(this.winleft);
+    }
+    public void setWinRight(View view){
+        loadWinRight();
+        view.setAnimation(this.winright);
+    }
+
 }

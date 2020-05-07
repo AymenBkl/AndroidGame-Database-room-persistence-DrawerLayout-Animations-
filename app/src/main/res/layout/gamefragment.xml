@@ -65,4 +65,14 @@
 
     </RelativeLayout>
 
+    <ImageView
+        android:id="@+id/responseimage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:padding="50dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
 </LinearLayout>
