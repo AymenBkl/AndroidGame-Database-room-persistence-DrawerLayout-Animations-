@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Khamam M3aya Chwiya</string>
+    <string name="headerText">Aymen Boukhalkhel</string>
+    <string name="okey">Okey</string>
+    <string name="open">Open</string>
+    <string name="close">Cloese</string>
+    <string name="check">Check</string>
+    <string name="score">Your Score is :</string>
+    <string name="khamam">Khamam</string>
+    <string name="chwiya">Chwiya</string>
+    <string name="enjoy">ENJOY !</string>
+</resources>

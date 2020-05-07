@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/nextLevel"
+            android:icon="@drawable/next"
+            android:title="next Level"/>
+        <item
+            android:id="@+id/previousLevel"
+            android:icon="@drawable/prev"
+            android:title="Previous Level"/>
+        <item
+            android:id="@+id/reset"
+            android:icon="@drawable/reset"
+            android:title="Reset Game"/>
+
+    </group>
+</menu>
